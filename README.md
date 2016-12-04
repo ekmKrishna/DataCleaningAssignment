@@ -47,8 +47,8 @@ to get the activity name for each observation. Subject_train.txt was read to cap
 Finally merged the all Subjecttrain, second column of trainActset which activity name and trainset to get the final Train set data.
 
 
-. trainset<-read.csv("./train/X_train.txt", sep="", header=FALSE)
-. names(trainset)=x
+* trainset<-read.csv("./train/X_train.txt", sep="", header=FALSE)
+* names(trainset)=x
 
 trainlabelset<- read.csv("./train/y_train.txt", header=FALSE,sep="")
 names(trainlabelset)="no"
