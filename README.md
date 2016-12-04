@@ -49,13 +49,12 @@ Finally merged the all Subjecttrain, second column of trainActset which activity
 
 * trainset<-read.csv("./train/X_train.txt", sep="", header=FALSE)
 * names(trainset)=x
-
-trainlabelset<- read.csv("./train/y_train.txt", header=FALSE,sep="")
-names(trainlabelset)="no"
-trainActset<-merge(trainlabelset,activitylabels,  by.x="no",by.y="no")
-Subjecttrain<- read.csv("./train/subject_train.txt", header=FALSE,sep="")
-names(Subjecttrain)="PersonID"
-final_trainset<- cbind(Subjecttrain,trainActset[2],trainset)
+*trainlabelset<- read.csv("./train/y_train.txt", header=FALSE,sep="")
+*names(trainlabelset)="no"
+*trainActset<-merge(trainlabelset,activitylabels,  by.x="no",by.y="no")
+*Subjecttrain<- read.csv("./train/subject_train.txt", header=FALSE,sep="")
+*names(Subjecttrain)="PersonID"
+*final_trainset<- cbind(Subjecttrain,trainActset[2],trainset)
 
 The test data set from X_test.txt was read to the DF testset and labeled the all columns from the factor X.
 Testing labels were read to the DF testlabelset and labeled the column with "no" (number). Merged the testlabelset and activitylabels
