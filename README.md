@@ -48,7 +48,9 @@ Finally merged the all Subjecttrain, second column of trainActset which activity
 
 
 trainset<-read.csv("./train/X_train.txt", sep="", header=FALSE)
+
 names(trainset)=x
+
 trainlabelset<- read.csv("./train/y_train.txt", header=FALSE,sep="")
 names(trainlabelset)="no"
 trainActset<-merge(trainlabelset,activitylabels,  by.x="no",by.y="no")
