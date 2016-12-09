@@ -51,10 +51,12 @@ Finally merged the all Subjecttrain, second column of trainActset which activity
 * names(trainset)=x
 * trainlabelset<- read.csv("./train/y_train.txt", header=FALSE,sep="")
 * names(trainlabelset)="no"
-* trainActset<-merge(trainlabelset,activitylabels,  by.x="no",by.y="no")
 * Subjecttrain<- read.csv("./train/subject_train.txt", header=FALSE,sep="")
 * names(Subjecttrain)="PersonID"
-* final_trainset<- cbind(Subjecttrain,trainActset[2],trainset)
+* SUBTRAIN<-cbind(Subjecttrain,trainlabelset)
+* SUBTRAIN_ACCT<-merge(activitylabels,SUBTRAIN, by.x="no",by.y="no")
+* final_trainset<- cbind(SUBTRAIN_ACCT,trainset)
+
 
 The test data set from X_test.txt was read to the DF testset and labeled the all columns from the factor X.
 Testing labels were read to the DF testlabelset and labeled the column with "no" (number). Merged the testlabelset and activitylabels
@@ -66,10 +68,11 @@ finally merged the all Subjecttest, second column of testActset which is activit
 * names(testset)=x
 * testlabelset<- read.csv("./test/y_test.txt", header=FALSE,sep="")
 * names(testlabelset)="no"
-* testActset<-merge(testlabelset,activitylabels,  by.x="no",by.y="no")
 * Subjecttest<- read.csv("./test/subject_test.txt", header=FALSE,sep="")
 * names(Subjecttest)="PersonID"
-* final_testset<- cbind(Subjecttest,testActset[2],testset)
+* SUBTEST<-cbind(Subjecttest,testlabelset)
+* SUBTEST_ACCT<-merge(activitylabels,SUBTEST, by.x="no",by.y="no")
+* final_testset<- cbind(SUBTEST_ACCT,testset)
 
 All rows of final_trainset and final_testset were merged  to get the final data set
 
@@ -79,8 +82,8 @@ As per the requirement collected the only mean and std fields from the merged se
 with meanFreq() and same were considered, which caused to get 86 columns of mean/std.
 
 * FinalDataSet <-final_train_test_set[grepl("PersonID|activityName|std|mean", names(final_train_test_set), ignore.case = TRUE) ]
-
+* names(FinalDataSet) <- gsub("\\(\\)|-", "", names(FinalDataSet))
 Final data set was grouped by activityName,PersonID (subject) and calculated the average for all 86 rows as mentioned above.
 * TidyDataSet<-group_by(FinalDataSet,activityName,PersonID)%>% summarise_each(funs(mean))
 
-Finally got the tiday data set as 40 Rows and 88 Columns.
+Finally got the tiday data set as 180 Rows and 88 Columns.
