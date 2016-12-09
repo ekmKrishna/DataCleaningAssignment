@@ -1,3 +1,5 @@
+<table>
+    <tr>
 "column.names","class","range","mean"
 "1","activityName","factor","LAYING,SITTING,STANDING,WALKING,WALKING_DOWNSTAIRS,WALKING_UPSTAIRS","Not available"
 "2","PersonID","integer","1,30","Not available"
@@ -87,3 +89,5 @@
 "86","angle(X,gravityMean)","numeric","-0.825205308194444,0.499848737857143","-0.497906928403486"
 "87","angle(Y,gravityMean)","numeric","-0.492287025857143,0.317616292983051","0.0642075500616794"
 "88","angle(Z,gravityMean)","numeric","-0.507019938285714,0.195819429863636","-0.0502607356895717"
+</tr>
+</table>
