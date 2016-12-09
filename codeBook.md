@@ -1,6 +1,6 @@
 <table>
     <tr>
-"column.names","class","range","mean"
+<td> "column.names","class","range","mean" </td>
 "1","activityName","factor","LAYING,SITTING,STANDING,WALKING,WALKING_DOWNSTAIRS,WALKING_UPSTAIRS","Not available"
 "2","PersonID","integer","1,30","Not available"
 "3","tBodyAccmeanX","numeric","0.236594877542373,0.298082893684211","0.274340465268024"
